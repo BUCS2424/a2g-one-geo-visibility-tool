@@ -5,7 +5,7 @@ WORKDIR /app/client
 
 COPY client/package*.json ./
 
-RUN npm ci
+RUN npm install
 
 COPY client .
 
@@ -18,7 +18,7 @@ WORKDIR /app/server
 
 COPY server/package*.json ./
 
-RUN npm ci --production
+RUN npm install --production
 
 # Final stage
 FROM node:18-alpine
